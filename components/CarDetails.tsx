@@ -31,7 +31,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailProps) => {
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-y-auto'>
-            <div className='flex nin-h-full items-center justify-center p-4 text-center'>
+            <div className='flex min-h-full items-center justify-center p-4 text-center'>
               <Transition.Child
                 as={React.Fragment}
                 enter='easy-out duration-300'
@@ -41,7 +41,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailProps) => {
                 leaveFrom='opacity-100'
                 leaveTo='opacity-0 scale-95'
               >
-                <Dialog.Panel>
+                <Dialog.Panel className='relative w-full max-w-lg max-h-[90px] overflow-y-auto transform rounded-2xl bg-white'>
                   <button type='button' onClick={closeModal}>
                     <Image
                       src='/close.svg'
