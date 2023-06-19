@@ -41,8 +41,12 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailProps) => {
                 leaveFrom='opacity-100'
                 leaveTo='opacity-0 scale-95'
               >
-                <Dialog.Panel className='relative w-full max-w-lg max-h-[90px] overflow-y-auto transform rounded-2xl bg-white'>
-                  <button type='button' onClick={closeModal}>
+                <Dialog.Panel className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5'>
+                  <button
+                    type='button'
+                    className='absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full'
+                    onClick={closeModal}
+                  >
                     <Image
                       src='/close.svg'
                       alt='close'
@@ -51,6 +55,10 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailProps) => {
                       className='object-contain'
                     />
                   </button>
+
+                  <div className='flex-1 flex flex-col gap-3'>
+                    <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'></div>
+                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
